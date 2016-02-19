@@ -35,5 +35,11 @@ defmodule BudjetApi.Endpoint do
     key: "_budjet_api_key",
     signing_salt: "A4SWJ296"
 
+  plug Corsica,
+    origins: "http://localhost:4200",
+    allow_headers: ["Authorization", "Content-Type", "Accept", "Origin",
+                    "User-Agent", "DNT","Cache-Control", "X-Mx-ReqToken",
+                    "Keep-Alive", "X-Requested-With", "If-Modified-Since",
+                    "X-CSRF-Token", "X-USER-EMAIL", "X-USER-TOKEN"]
   plug BudjetApi.Router
 end
