@@ -14,12 +14,14 @@ defmodule BudjetApi.Router do
   end
 
   scope "/", BudjetApi do
-    pipe_through :browser # Use the default browser stack
+    # pipe_through :browser # Use the default browser stack
+    pipe_through :api
 
     get "/", PageController, :index
 
     resources "/users", UserController, except: [:new, :edit]
     resources "/budget_sheets", BudgetSheetController, except: [:new, :edit]
+    resources "/sessions", SessionController, only: [:create]
   end
 
   # Other scopes may use custom stacks.
