@@ -20,7 +20,7 @@ defmodule BudjetApi.Router do
     get "/", PageController, :index
 
     resources "/users", UserController, except: [:new, :edit]
-    resources "/budget_sheets", BudgetSheetController, except: [:new, :edit]
+    resources "/budget_sheets", BudgetSheetController, except: [:new, :edit, :update]
     resources "/sessions", SessionController, only: [:create]
   end
 
