@@ -19,6 +19,7 @@ defmodule BudjetApi.Router do
     get "/", PageController, :index
 
     resources "/users", UserController, except: [:new, :edit]
+    resources "/budget_sheets", BudgetSheetController, except: [:new, :edit]
   end
 
   # Other scopes may use custom stacks.
