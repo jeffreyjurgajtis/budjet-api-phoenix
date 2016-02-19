@@ -12,8 +12,8 @@ config :logger, level: :warn
 # Configure your database
 config :budjet_api, BudjetApi.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: "root",
+  password: "",
   database: "budjet_api_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
