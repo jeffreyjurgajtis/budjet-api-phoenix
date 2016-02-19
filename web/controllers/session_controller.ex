@@ -13,7 +13,7 @@ defmodule BudjetApi.SessionController do
       %User{} ->
         conn
         |> put_status(:created)
-        |> render("show.json", user: user)
+        |> render("show.json", user: user, token: token)
       nil ->
         conn
         |> put_status(:unprocessable_entity)
